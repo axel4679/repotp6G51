@@ -63,15 +63,27 @@ public class Cliente {
 
 	public List<Factura> consultarCompras() {
 		List<Factura> shoppingList = new ArrayList<Factura>();
+		
 		if (CollectionFactura.facturas != null) {
 			for (Factura fac : CollectionFactura.facturas) {
 				if (fac.getCliente().getDni() == this.dni) {
 					shoppingList.add(fac);
 				}
 			}
-		} else {
-			shoppingList = null;
-		}
+		} 
+		
+		else shoppingList = null;
+		
 		return shoppingList;
 	}
+
+
+	public void mostrarCliente() {
+		System.out.println("\nDNI: " + dni);
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Direccion: " + direccion);
+        System.out.println("Telefono: " + telefono);
+	}
+	
+	
 }
